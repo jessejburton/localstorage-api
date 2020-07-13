@@ -1,0 +1,35 @@
+{
+  "name": "localstorage-collection-api",
+  "version": "1.0.0",
+  "description": "A simple API for creating and managing collections in Local Storage. Great for rapid prototyping.",
+  "main": "localStorageAPI.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessejburton/localstorage-collection-api.git"
+  },
+  "keywords": [
+    "localStorage",
+    "storage",
+    "collections",
+    "api",
+    "prototyping",
+    "tool",
+    "data"
+  ],
+  "author": {
+    "name": "Jesse Burton | BURTONMEDIA",
+    "email": "jesse@burtonmediainc.com",
+    "url": "https://www.burtonmediainc.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jessejburton/localstorage-collection-api/issues"
+  },
+  "homepage": "https://github.com/jessejburton/localstorage-collection-api#readme"
+}

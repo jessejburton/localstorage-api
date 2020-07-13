@@ -39,7 +39,7 @@ class LocalStorageAPI {
     let updated = false
     let newCollection = collection.map(item => {
       if (item.id === object.id) {
-        update = true
+        updated = true
         return object
       } else {
         return item
@@ -80,3 +80,5 @@ class LocalStorageAPI {
     );
   }
 }
+
+export { LocalStorageAPI }

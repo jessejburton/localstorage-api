@@ -7,18 +7,28 @@ Not meant to be an alternative to backend storage, simply a tool that allows you
 
 ## To Use
 
-Simply dpwnload and include the localStorageAPI.js file in your project using:
+### Download
+Download and include the localStorageAPI.js file in your project using:
 
     <script src="localStorageAPI.js"></script>
 
-Then in your JavaScript you will have access to the LocalStorageAPI and all of the methods outlines below.
+### NPM
+You can install this as an npm package using:
+
+    npm i localstorage-collection-api
+
+And then import it in to your project with:
+
+    import { localStorageAPI as ls } from 'localstorage-collection-api'
+
+Then in your JavaScript you will have access to the LocalStorageAPI and all of the methods outlined below.
 
 ## API
 So that you don't have to type LocalStorageAPI each time you can reference it via a simpler variable, for example:
 
 ```javascript
-    const ds = LocalStorageAPI
-    ds.createCollection("users")
+    const ls = LocalStorageAPI
+    ls.createCollection("users")
 ```
 
 ***
@@ -28,23 +38,23 @@ A collection is an array of objects stored in Local Storage.
 
 #### Creating A New Collection
 ```javascript
-    ds.createCollection("users")
+    ls.createCollection("users")
 ```
 Creates a new empty array called "users" in localStorage
 
 #### Deleting a Collection
 ```javascript
-    ds.deleteCollection("users")
+    ls.deleteCollection("users")
 ```
 Deletes a collection called "users" from localStorage if it exists
 
 #### Getting a Collection
 ```javascript
-    ds.getCollection("users")
+    ls.getCollection("users")
 ```
 
 ```javascript
-    ds.get("users")
+    ls.get("users")
 ```
 Gets all items in the "users" collection if it exists
 
@@ -55,7 +65,7 @@ An item is an object within a collection. Unlike a real backend there are no sch
 
 #### Create an Item
 ```javascript
-    ds.create("users", {
+    ls.create("users", {
       firstName: "Jesse",
       lastName: "Burton"
     })
@@ -71,7 +81,7 @@ returns the object with the id.
 
 #### Update an Item
 ```javascript
-    ds.update("users", {
+    ls.update("users", {
       id: "705e7dad-e0a3-495d-93dd-f088f98803a6",
       firstName: "John",
       lastName: "Doe"
@@ -84,7 +94,7 @@ returns the object or "Item not found".
 
 #### Delete an Item
 ```javascript
-    ds.delete("users", {
+    ls.delete("users", {
       id: "705e7dad-e0a3-495d-93dd-f088f98803a6"
     })
 ```
@@ -97,13 +107,13 @@ returns "Item removed" or "Item not found".
 
 #### Get an Item
 ```javascript
-    ds.get("users", {
+    ls.get("users", {
       id: "705e7dad-e0a3-495d-93dd-f088f98803a6"
     })
 ```
 
 ```javascript
-    ds.get("users", {
+    ls.get("users", {
       firstName: "Jesse"
     })
 ```
