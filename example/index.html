@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocalStorageAPI</title>
+
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <main class="layout-sidebar layout-sidebar-left">
+    <aside>
+      <button onClick="clearUsers()">Clear Users</button>
+    </aside>
+    <article>
+      <form>
+        <h3>Add User</h3>
+        <div>
+          <label>First Name</label>
+          <input type="text" placeholder="First Name" name="firstName" />
+        </div>
+        <div>
+          <label>Last Name</label>
+          <input type="text" placeholder="Last Name" name="lastName" />
+        </div>
+        <button>Add User</button>
+      </form>
+
+      <table id="users">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      </div>
+  </main>
+
+  <script src="../localStorageAPI.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
