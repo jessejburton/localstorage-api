@@ -62,7 +62,7 @@ class LocalStorageAPI {
 
   static get(name, object = null) {
     let collection = this.getCollection(name)
-    if (!collection) return null
+    if (!collection) return this.createCollection(name)
 
     if (!object) return collection
 
@@ -71,7 +71,7 @@ class LocalStorageAPI {
         return item[key] === object[key]
       }
     })
-    return newCollection || "Item not found"
+    return newCollection.length > 1 ? newCollection : newCollection[0] || "Item not found"
   }
 
   static createUID() {
@@ -81,4 +81,4 @@ class LocalStorageAPI {
   }
 }
 
-export { LocalStorageAPI }
+export { LocalStorageAPI, LocalStorageAPI as ls }

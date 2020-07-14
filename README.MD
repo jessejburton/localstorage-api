@@ -19,7 +19,7 @@ You can install this as an npm package using:
 
 And then import it in to your project with:
 
-    import { localStorageAPI as ls } from 'localstorage-collection-api'
+    import { ls } from 'localstorage-collection-api'
 
 Then in your JavaScript you will have access to the LocalStorageAPI and all of the methods outlined below.
 
@@ -27,7 +27,7 @@ Then in your JavaScript you will have access to the LocalStorageAPI and all of t
 So that you don't have to type LocalStorageAPI each time you can reference it via a simpler variable, for example:
 
 ```javascript
-    const ls = LocalStorageAPI
+    const ls = LocalStorageAPI()
     ls.createCollection("users")
 ```
 
