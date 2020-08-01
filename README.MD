@@ -29,14 +29,6 @@ And then you can import the module via:
 <font size="1">use ./ if the file is in the same folder or specify the relative path.</font>
 
 ## API
-So that you don't have to type LocalStorageAPI each time you can reference it via a simpler variable, for example:
-
-```javascript
-    const ls = LocalStorageAPI()
-    ls.createCollection("users")
-```
-
-***
 
 ### Collections
 A collection is an array of objects stored in Local Storage.
@@ -61,7 +53,7 @@ Deletes a collection called "users" from localStorage if it exists
 ```javascript
     ls.get("users")
 ```
-Gets all items in the "users" collection if it exists
+Gets all items in the "users" collection if it exists, creates the collection if it doesn't and returns an empty array.
 
 ***
 
@@ -79,6 +71,8 @@ An item is an object within a collection. Unlike a real backend there are no sch
 Adds an item to the "users" collection with the properties of firstName and lastName.
 
 A unique id field will automatically be created
+
+A createdAt date will also be added to the item
 
 If "users" collection doesn't exist it will be created
 
@@ -129,4 +123,45 @@ The second example will return any item in the "users" collection with the first
 
 You can pass in any name value pair and it will return the items that match that parameter.
 
-Currently only the first name value pair is searched.
+Currently only the first matching name/value pair is searched.
+
+#### Options
+The third paramter to the get function is an options object. Currently the available options are:
+
+* sort
+* order
+
+So you can pass in an object to automatically sort the results ie.
+
+```javascript
+    ls.get("users", null, {
+      sort: "firstName"
+    })
+```
+
+```javascript
+    ls.get("users", null, {
+      sort: "createdAt",
+      order: "DESC"
+    })
+```
+
+```javascript
+    ls.get(
+      "users",
+      {
+        firstName: "Jesse"
+      },
+      {
+        sort: "lastName",
+        order: "DESC"
+      })
+```
+
+By default the order is ASC, you can pass in DESC to reverse the results
+
+By passing null as the second paramater you are requesting all items.
+
+Pass in a search parameter to filter and sort the results
+
+Date fields are automatically detected and sorted
