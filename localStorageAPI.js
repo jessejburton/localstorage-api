@@ -65,7 +65,8 @@ class LocalStorageAPI {
     if (!options) return collection
 
     if (options.sort) {
-      let isDate = false
+      let check = collection[0].sort
+      let isDate = !isNaN(new Date(check).getDay())
 
       if (isDate) {
         collection = collection.sort((a, b) => {

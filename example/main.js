@@ -1,6 +1,8 @@
 import { ls } from '../localStorageAPI.js'
 
-showUsers()
+window.showUsers = showUsers
+
+showUsers("createdAt")
 
 const form = document.querySelector("form")
 form.addEventListener("submit", handleSubmit);
@@ -34,11 +36,20 @@ function clearUsers() {
   showUsers()
 }
 
-function showUsers() {
-  let users = ls.get("users", null, {
-    sort: "firstName",
-    order: "ASC" // default
-  })
+function showUsers(sortBy = null, order = "ASC") {
+  let sort
+  if (!sortBy) {
+    sort = {
+      sort: "firstName",
+      order: order
+    }
+  } else {
+    sort = {
+      sort: sortBy,
+      order: order
+    }
+  }
+  let users = ls.get("users", null, sort)
 
   if (!users) {
     users = ls.createCollection("users")
