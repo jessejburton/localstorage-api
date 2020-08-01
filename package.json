@@ -1,6 +1,6 @@
 {
   "name": "localstorage-collection-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple API for creating and managing collections in Local Storage. Great for rapid prototyping.",
   "main": "localStorageAPI.js",
   "directories": {

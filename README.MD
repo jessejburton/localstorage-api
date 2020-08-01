@@ -6,12 +6,6 @@ This class will allow you to simulate an API and database backend in the browser
 Not meant to be an alternative to backend storage, simply a tool that allows you to create prototypes that work as if they have a backend.
 
 ## To Use
-
-### Download
-Download and include the localStorageAPI.js file in your project using:
-
-    <script src="localStorageAPI.js"></script>
-
 ### NPM
 You can install this as an npm package using:
 
@@ -22,6 +16,17 @@ And then import it in to your project with:
     import { ls } from 'localstorage-collection-api'
 
 Then in your JavaScript you will have access to the LocalStorageAPI and all of the methods outlined below.
+
+### Download
+You can also just download the LocalStorageAPI.js file from this repository. To use it this way you must include the type="module" attribute in your javascript file:
+
+    <script type="module" src="main.js"></script>
+
+And then you can import the module via:
+
+    import { ls } from './localStorageAPI.js'
+
+<font size="1">use ./ if the file is in the same folder or specify the relative path.</font>
 
 ## API
 So that you don't have to type LocalStorageAPI each time you can reference it via a simpler variable, for example:

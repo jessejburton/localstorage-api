@@ -12,7 +12,7 @@
 <body>
   <main class="layout-sidebar layout-sidebar-left">
     <aside>
-      <button onClick="clearUsers()">Clear Users</button>
+      <button id="clear">Clear Users</button>
     </aside>
     <article>
       <form>
@@ -31,17 +31,17 @@
       <table id="users">
         <thead>
           <tr>
+            <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
+            <th>Date Created</th>
           </tr>
         </thead>
         <tbody></tbody>
       </table>
-      </div>
   </main>
 
-  <script src="../localStorageAPI.js"></script>
-  <script src="main.js"></script>
+  <script type="module" src="main.js"></script>
 </body>
 
 </html>
